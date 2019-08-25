@@ -1,0 +1,47 @@
+.App{
+  background-image: url('./card.jpg');
+  background-repeat: no-repeat;
+  background-size: 25%;
+  
+  
+  
+}
+
+.logo-puce{
+  width: 35px;
+}
+.logo{
+  margin-left: 84px;
+  width: 43px;
+  height: 59px;
+
+}
+.h3-card{
+  color: white;
+  display: flex;
+  margin-left: 204px;
+}
+.num-card{
+  color: grey;
+  margin: 5px 48px;
+}
+.footer-card{
+  display: flex;
+}
+.valid{
+  margin-left: 100px;
+}
+.Credit{
+  display: flex;
+  
+}
+.form{
+  margin-left: 40px;
+}
+.form-validthru{
+  display: flex;
+  
+}
+.date-year{
+  margin-left: 20px;
+}

@@ -4,53 +4,37 @@ import Image from './images.jpg'
 
 
 
-const renderNumber = number=>{
-    number=number.toString()
-    let resultStr=''
-    for (let i=0;i<number.length;i+=4){
-        resultStr+=number.slice(i,i+4)+''
-    }
-    return resultStr.trim()
-}
-
 class Credit extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name:'FOULEN',
-            Year:'YY' ,
-            Month:'MM',
+            ValidThru:'MM/YY',
             Number:'13581xxxxxxxxxxx'
 
           }
-          this.nameChange=this.nameChange.bind(this)
-          this.YearChange=this.YearChange.bind(this)
-          this.MonthChange=this.MonthChange.bind(this)
-          this.NumberChange=this.NumberChange.bind(this)
-
+       
         }
-    nameChange(n){
+    nameChange=(n)=>{
         this.setState({
             name:n.target.value
         });
     
     }
-    YearChange(y){
-        this.setState({
-            Year:y.target.value
-        });
-    }
-    MonthChange(m){
+  
+    ValidThruChange=(m)=>{
         this.setState({
             Month:m.target.value
         });
     }
-    NumberChange(N){
+    NumberChange=(N)=>{
+        
         this.setState({
-           Number:N.target.value 
+            Number:N.target.value
+        
         });
     }
-    
+     
     render() { 
         return (
          <div>
@@ -63,13 +47,13 @@ class Credit extends Component {
   <img  className="logo-puce" src={Puce} alt="puce"/> 
   </div>
   <div>
-  <h3 className="num-card">{renderNumber(this.state.Number)}</h3>
+  <h3 className="num-card">{this.state.Number.slice(0,4)+' '+this.state.Number.slice(4,8 )+' '+this.state.Number.slice(8,12 )+' '+this.state.Number.slice(12,16 )+' '}</h3>
   </div>
   <div className="footer-card">
     <div className="main-footer">
   <h4 className="title">{this.state.name.toUpperCase()}</h4>
   </div>
-  <h6 className="valid">{this.state.Month}/{this.state.Year}</h6>
+  <h6 className="valid">{this.state.Month.slice(0,2)+'/'+this.state.Month.slice(2,4)}</h6>
   <img  className="logo" src={Image} alt="logo"/>
   </div>
 </div>
@@ -82,12 +66,9 @@ class Credit extends Component {
     </div>
     <div className='form-validthru'>
     <div>
-    <input type="text" maxLength="2" onChange={this.MonthChange}/>
+    <input type="text" maxLength="5" onChange={this.ValidThruChange}/>
     </div>
-    /
-    <div className='date-year'>
-    <input type="text" maxLength="2" onChange={this.YearChange}/>
-    </div>
+   
     </div>
 </div>
 

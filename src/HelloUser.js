@@ -24,7 +24,7 @@ class Credit extends Component {
   
     ValidThruChange=(m)=>{
         this.setState({
-            Month:m.target.value
+            ValidThru:m.target.value
         });
     }
     NumberChange=(N)=>{
@@ -53,7 +53,7 @@ class Credit extends Component {
     <div className="main-footer">
   <h4 className="title">{this.state.name.toUpperCase()}</h4>
   </div>
-  <h6 className="valid">{this.state.Month.slice(0,2)+'/'+this.state.Month.slice(2,4)}</h6>
+  <h6 className="valid">{this.state.ValidThru.slice(0,2)+'/'+this.state.ValidThru.slice(2,4)}</h6>
   <img  className="logo" src={Image} alt="logo"/>
   </div>
 </div>
